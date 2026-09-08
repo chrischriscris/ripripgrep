@@ -20,6 +20,8 @@ aho-corasick = "1"
 regex-syntax = "0.8"
 memmap2 = "0.9"
 grep-printer = "0.3"
+termcolor = "1"
+grep-matcher = "0.1"
 
 [dev-dependencies]
 criterion.workspace = true

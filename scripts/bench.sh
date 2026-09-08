@@ -20,7 +20,7 @@ for i in "${!QUERIES[@]}"; do
   flags=()
   if [ "$i" -lt 3 ]; then flags=(-F); fi
   # Quote complete argument vectors for hyperfine's explicit bash shell.
-  printf -v rrg_cmd '%q ' "$RRG" "${flags[@]}" -- "$q" "$CORPUS"
+  printf -v rrg_cmd '%q ' "$RRG" --color never --no-heading --with-filename --line-number "${flags[@]}" -- "$q" "$CORPUS"
   printf -v rg_cmd '%q ' "$RG" --no-config --color never --no-heading --with-filename --line-number "${flags[@]}" -- "$q" "$CORPUS"
   echo "== query: $q"
   hyperfine --shell bash --warmup "$WARMUP" --runs "$RUNS" \

@@ -915,6 +915,8 @@ dependencies = [
  "anyhow",
  "clap",
  "rrg-core",
+ "serde_json",
+ "tempfile",
 ]
 
 [[package]]
@@ -924,6 +926,7 @@ dependencies = [
  "aho-corasick",
  "anyhow",
  "criterion",
+ "grep-matcher",
  "grep-printer",
  "grep-regex",
  "grep-searcher",
@@ -937,13 +940,7 @@ dependencies = [
  "serde",
  "serde_json",
  "tempfile",
-]
-
-[[package]]
-name = "rrg-daemon"
-version = "0.1.0"
-dependencies = [
- "anyhow",
+ "termcolor",
 ]
 
 [[package]]
