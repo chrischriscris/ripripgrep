@@ -6,15 +6,17 @@ tradeoffs. Be respectful and constructive in issues and reviews.
 
 ## Local workflow
 
-Use Linux or macOS with current stable Rust. Clone the repository, create a
+Use Linux or macOS with current stable Rust and an installed `rg` 15.2.0 for differential CLI tests (`cargo install ripgrep --version 15.2.0 --locked`). Clone the repository, create a
 branch, and run these commands from the workspace root:
 
 ```sh
-cargo test --workspace --locked
+RRG_REQUIRE_RG=1 cargo test --workspace --locked
 cargo fmt --all -- --check
 cargo clippy --workspace --all-targets --locked
 cargo build --release --locked
 ```
+
+Run `python3 scripts/check-terminal.py target/debug/rrg` after changing output or terminal defaults.
 
 Keep engine logic in `crates/core` and CLI parsing in `crates/cli`. Use Rust's
 standard formatting and naming conventions. Keep changes focused and avoid

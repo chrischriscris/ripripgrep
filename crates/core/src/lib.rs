@@ -8,6 +8,7 @@
 //!   pipelining walk -> read -> SIMD prefilter -> regex.
 //! - M2: adaptive n-gram index + lock-free daemon for instant warm queries.
 
+pub mod command;
 pub mod index;
 pub mod query;
 pub mod search;
