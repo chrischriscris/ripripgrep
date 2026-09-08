@@ -1,7 +1,8 @@
 # CLI compatibility
 
-The compatibility target is rg's everyday search workflow, with native rrg
-execution. Differential tests compare output bytes and exit status with rg;
+The compatibility target is rg 15.2.0's everyday search workflow, with native rrg
+execution. CI installs this exact version on both Linux and macOS; older rg
+versions can differ in JSON summary accounting even when match events agree. Differential tests compare output bytes and exit status with rg;
 JSON comparisons exclude elapsed time. PTY tests check terminal defaults.
 
 ## Implemented
@@ -49,6 +50,7 @@ Unknown flags fail with exit code 2 rather than being silently ignored.
 ## Regression checks
 
 ```sh
+cargo install ripgrep --version 15.2.0 --locked
 RRG_REQUIRE_RG=1 cargo test -p rrg --test rg_compat --locked
 cargo test -p rrg-core --locked
 python3 scripts/check-terminal.py target/debug/rrg

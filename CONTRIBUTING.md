@@ -6,7 +6,7 @@ tradeoffs. Be respectful and constructive in issues and reviews.
 
 ## Local workflow
 
-Use Linux or macOS with current stable Rust and an installed `rg` for differential CLI tests. Clone the repository, create a
+Use Linux or macOS with current stable Rust and an installed `rg` 15.2.0 for differential CLI tests (`cargo install ripgrep --version 15.2.0 --locked`). Clone the repository, create a
 branch, and run these commands from the workspace root:
 
 ```sh

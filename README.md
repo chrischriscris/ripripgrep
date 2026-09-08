@@ -96,8 +96,8 @@ cargo bench -p rrg-core --bench baseline --locked
 python3 scripts/check-terminal.py target/debug/rrg
 ```
 
-Install `rg` to run differential CLI tests. CI requires it on both Linux and
-macOS; set `RRG_REQUIRE_RG=1` locally to fail instead of skipping those tests
+Install `rg` 15.2.0 to run differential CLI tests. CI pins this version on both
+Linux and macOS; set `RRG_REQUIRE_RG=1` locally to fail instead of skipping those tests
 when rg is missing. The PTY test checks actual terminal rendering. See
 [CONTRIBUTING.md](CONTRIBUTING.md).
 
