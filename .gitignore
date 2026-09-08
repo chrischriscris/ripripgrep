@@ -1,0 +1,13 @@
+/target
+bench-*.json
+Cargo.lock.bak
+.DS_Store
+.rrg-index/
+
+# Local development artifacts
+.pi/
+.references/
+.rpg-index/
+MORNING.md
+consults/
+AGENTS.md

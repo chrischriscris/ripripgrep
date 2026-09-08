@@ -1,0 +1,26 @@
+[workspace]
+resolver = "2"
+members = ["crates/core", "crates/cli"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Unlicense"
+repository = "https://github.com/chrischriscris/ripripgrep"
+
+[workspace.dependencies]
+# Ripgrep's own engine crates — our parity baseline (MIT/Unlicense, embed cleanly)
+grep-searcher = "0.1"
+grep-regex = "0.1"
+ignore = "0.4"
+
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+rayon = "1"
+
+# Bench
+criterion = "0.5"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
